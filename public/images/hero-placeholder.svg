@@ -1,0 +1,25 @@
+<svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a3ab8"/>
+      <stop offset="100%" stop-color="#052a9e"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="520" rx="24" fill="url(#heroBg)"/>
+  <rect x="6" y="6" width="628" height="508" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2.5" stroke-dasharray="10 8"/>
+
+  <!-- simple car glyph -->
+  <g transform="translate(160,190)" opacity="0.9">
+    <path d="M0 110 L20 60 Q35 40 60 40 L260 40 Q285 40 300 60 L320 110 Z" fill="#ffffff" opacity="0.18"/>
+    <path d="M60 45 L80 15 Q88 5 100 5 L220 5 Q232 5 240 18 L255 45 Z" fill="#ffffff" opacity="0.18"/>
+    <circle cx="55" cy="112" r="24" fill="#ffffff" opacity="0.28"/>
+    <circle cx="265" cy="112" r="24" fill="#ffffff" opacity="0.28"/>
+  </g>
+
+  <text x="320" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#ffffff">
+    Hero photo goes here
+  </text>
+  <text x="320" y="410" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#bcd4f5">
+    Replace public/images/hero.jpg with your own photo
+  </text>
+</svg>
