@@ -12,7 +12,6 @@ import RouteMap from "@/components/RouteMap";
 import BookingWidget from "@/components/BookingWidget";
 import SectionHeading from "@/components/SectionHeading";
 import FAQ from "@/components/FAQ";
-import DriverIllustration from "@/components/DriverIllustration";
 import JourneyStats from "@/components/JourneyStats";
 import { routes, services, site, faqs, fleet, waLink } from "@/lib/data";
 
@@ -222,7 +221,7 @@ export default function Home() {
         >
           <div className="relative w-full aspect-[16/10] bg-[var(--color-sand-dark)]">
             <Image
-              src={index === 1 ? "/images/su2.jpeg" : "/images/s2.png"}
+              src={index === 1 ? "/images/sv.jpeg" : "/images/s2.png"}
               alt={`${f.name} placeholder \u2014 replace with your own vehicle photo`}
               fill
               sizes="(min-width: 640px) 50vw, 100vw"
@@ -265,8 +264,14 @@ export default function Home() {
               Learn more <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="rounded-3xl overflow-hidden bg-[var(--color-sand-dark)]">
-            <DriverIllustration />
+          <div className="relative rounded-3xl overflow-hidden bg-[var(--color-sand-dark)] min-h-[280px]">
+            <Image
+              src="/images/sedan.png"
+              alt="Executive sedan available for hourly private driver service"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>

@@ -20,7 +20,7 @@ const info = [
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-[var(--color-navy)] pt-6 pb-6 h-[50vh] flex items-center overflow-hidden">
+      <section className="bg-[var(--color-navy)] pt-14 pb-14 lg:pt-6 lg:pb-6 lg:h-[50vh] lg:flex lg:items-center lg:overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-10 items-center w-full">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber-light)] mb-4">

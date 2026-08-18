@@ -75,7 +75,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-[var(--color-navy)] border-t border-white/10 px-5 pb-6 pt-2">
+        <div className="md:hidden bg-[var(--color-navy)] border-t border-white/10 px-5 pb-6 pt-2 max-h-[calc(100vh-4.5rem)] overflow-y-auto">
           <nav className="flex flex-col gap-1">
             {links.map((l) => (
               <Link

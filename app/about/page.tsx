@@ -77,7 +77,7 @@ export default function AboutPage() {
           </div>
           <div className="relative w-full aspect-[4/3] lg:aspect-[16/11]">
             <Image
-              src="/images/about.png"
+              src="/images/about.jpg"
               alt="Khobar and Bahrain Taxi service"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
