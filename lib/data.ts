@@ -1,11 +1,16 @@
 export const site = {
-  name: "Target Transportation",
+  name: "Khobar and Bahrain Taxi",
   tagline: "Khobar \u21C4 Bahrain, one fixed fare, zero surprises.",
   phone: "+966 50 287 8792",
-  phoneHref: "tel:+966502878792",
-  whatsapp: "https://wa.me/966502878792",
+  whatsappNumber: "966502878792",
+  get phoneHref() {
+    return `tel:+${this.whatsappNumber}`;
+  },
+  get whatsapp() {
+    return `https://wa.me/${this.whatsappNumber}`;
+  },
   whatsappText:
-    "Hello, I am contacting you through your Target Transportation website. I would like to know more about your booking process, available services, and pricing.",
+    "Hello, I am contacting you through your Khobar and Bahrain Taxi website. I would like to know more about your booking process, available services, and pricing.",
   email: "fahad.irshad39@gmail.com",
   address: "22 St, Al Aqrabiyah, Al Khobar 34445, Saudi Arabia",
   facebook: "https://www.facebook.com/targettransportationofficial/",
@@ -53,7 +58,7 @@ export const faqs: FaqItem[] = [
     a: "Yes, we operate every day, around the clock. Message us any time and we'll confirm a driver.",
   },
   {
-    q: "Is Target Transportation a licensed company?",
+    q: "Is Khobar and Bahrain Taxi a licensed company?",
     a: "Yes, we operate as a licensed transport provider based in Al Khobar, with drivers trained on cross-border documentation and procedures.",
   },
   {

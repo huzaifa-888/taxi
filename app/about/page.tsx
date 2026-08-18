@@ -1,13 +1,14 @@
-import { ArrowRight, ShieldCheck, Clock3, MapPinned, User } from "lucide-react";
+import { ArrowRight, ShieldCheck, Clock3, MapPinned, User, Award, Heart } from "lucide-react";
+import Image from "next/image";
 import RouteMap from "@/components/RouteMap";
 import SectionHeading from "@/components/SectionHeading";
 import { waLink, drivers } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Target Transportation",
+  title: "About Us | Khobar and Bahrain Taxi",
   description:
-    "Target Transportation is a professional, reliable taxi service based in Al Khobar, Saudi Arabia, running fixed-fare private taxis across the King Fahd Causeway.",
+    "Khobar and Bahrain Taxi is a professional, reliable taxi service based in Al Khobar, Saudi Arabia, running fixed-fare private taxis across the King Fahd Causeway.",
 };
 
 const values = [
@@ -28,30 +29,65 @@ const values = [
   },
 ];
 
+const ourValues = [
+  {
+    icon: ShieldCheck,
+    title: "Safety First",
+    text: "Your safety is our top priority with licensed drivers and well-maintained vehicles.",
+  },
+  {
+    icon: Award,
+    title: "Excellence",
+    text: "Committed to delivering the highest quality service on every ride.",
+  },
+  {
+    icon: Heart,
+    title: "Customer Care",
+    text: "Dedicated to providing exceptional customer service and support.",
+  },
+  {
+    icon: Clock3,
+    title: "Reliability",
+    text: "Punctual service you can count on, 24 hours a day, 7 days a week.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
       <section className="bg-[var(--color-navy)] pt-14 pb-20">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber-light)] mb-4">
-            Our Story
-          </p>
-          <h1 className="font-display text-4xl sm:text-5xl font-semibold text-[var(--color-sand)] max-w-2xl">
-            About Our Taxi Service
-          </h1>
-          <p className="mt-5 text-[var(--color-sand)]/75 max-w-xl leading-relaxed">
-            We are a professional and reliable taxi service based in Saudi
-            Arabia, dedicated to providing safe, comfortable, and on-time
-            transportation for all our customers. Whether you need a quick
-            city ride, an airport transfer, or a long-distance trip, our
-            experienced drivers and well-maintained vehicles ensure a smooth
-            journey every time. We pride ourselves on honesty, punctuality,
-            and customer satisfaction — because your comfort is our
-            priority.
-          </p>
-          <div className="mt-12">
-            <RouteMap />
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber-light)] mb-4">
+              Our Story
+            </p>
+            <h1 className="font-display text-4xl sm:text-5xl font-semibold text-[var(--color-sand)] max-w-2xl">
+              About Our Taxi Service
+            </h1>
+            <p className="mt-5 text-[var(--color-sand)]/75 max-w-xl leading-relaxed">
+              We are a professional and reliable taxi service based in Saudi
+              Arabia, dedicated to providing safe, comfortable, and on-time
+              transportation for all our customers. Whether you need a quick
+              city ride, an airport transfer, or a long-distance trip, our
+              experienced drivers and well-maintained vehicles ensure a smooth
+              journey every time. We pride ourselves on honesty, punctuality,
+              and customer satisfaction — because your comfort is our
+              priority.
+            </p>
           </div>
+          <div className="relative w-full aspect-[4/3] lg:aspect-[16/11]">
+            <Image
+              src="/images/about.png"
+              alt="Khobar and Bahrain Taxi service"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 mt-12">
+          <RouteMap />
         </div>
       </section>
 
@@ -77,6 +113,39 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber)] mb-4">
+            What we stand for
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-[var(--color-navy)]">
+            Our Values
+          </h2>
+          <p className="mt-3 text-[var(--color-ink)]/60 max-w-xl mx-auto">
+            The principles that guide everything we do.
+          </p>
+
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            {ourValues.map((v) => (
+              <div
+                key={v.title}
+                className="rounded-2xl border border-[var(--color-navy)]/10 bg-white p-7"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[var(--color-amber)]/15 flex items-center justify-center">
+                  <v.icon size={22} className="text-[var(--color-amber)]" />
+                </div>
+                <p className="font-display text-lg font-semibold text-[var(--color-navy)] mt-5">
+                  {v.title}
+                </p>
+                <p className="text-sm text-[var(--color-ink)]/60 mt-2 leading-relaxed">
+                  {v.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

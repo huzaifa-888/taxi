@@ -13,6 +13,7 @@ import BookingWidget from "@/components/BookingWidget";
 import SectionHeading from "@/components/SectionHeading";
 import FAQ from "@/components/FAQ";
 import DriverIllustration from "@/components/DriverIllustration";
+import JourneyStats from "@/components/JourneyStats";
 import { routes, services, site, faqs, fleet, waLink } from "@/lib/data";
 
 const reasons = [
@@ -146,7 +147,7 @@ export default function Home() {
               />
               <Image
                 src="/images/hero-car.png"
-                alt="SUV used for Target Transportation's private cross-border transfers"
+                alt="SUV used for Khobar and Bahrain Taxi's private cross-border transfers"
                 width={2000}
                 height={1146}
                 className="relative w-full h-auto drop-shadow-[0_35px_45px_rgba(0,0,0,0.45)]"
@@ -196,50 +197,51 @@ export default function Home() {
       </section>
 
       {/* FLEET */}
-      <section className="py-20 sm:py-24 bg-[var(--color-sand-dark)]">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="Our fleet"
-              title="Choose the car that fits your trip"
-              description="Every vehicle is inspected, air-conditioned, and driven by a licensed professional."
-            />
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-teal)] hover:text-[var(--color-navy)]"
-            >
-              View all services <ArrowRight size={15} />
-            </Link>
-          </div>
+     {/* FLEET */}
+<section className="py-20 sm:py-24 bg-[var(--color-sand-dark)]">
+  <div className="mx-auto max-w-7xl px-5 lg:px-8">
+    <div className="flex flex-wrap items-end justify-between gap-6">
+      <SectionHeading
+        eyebrow="Our fleet"
+        title="Choose the car that fits your trip"
+        description="Every vehicle is inspected, air-conditioned, and driven by a licensed professional."
+      />
+      <Link
+        href="/services"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-teal)] hover:text-[var(--color-navy)]"
+      >
+        View all services <ArrowRight size={15} />
+      </Link>
+    </div>
 
-          <div className="mt-12 grid sm:grid-cols-2 gap-6">
-            {fleet.map((f) => (
-              <div
-                key={f.name}
-                className="rounded-2xl bg-white border border-[var(--color-navy)]/10 overflow-hidden"
-              >
-                <div className="relative w-full aspect-[16/10] bg-[var(--color-sand-dark)]">
-                  <Image
-                    src={f.image}
-                    alt={`${f.name} placeholder \u2014 replace with your own vehicle photo`}
-                    fill
-                    sizes="(min-width: 640px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="font-display text-xl font-semibold text-[var(--color-navy)]">
-                    {f.name}
-                  </p>
-                  <p className="text-sm text-[var(--color-ink)]/65 mt-2 leading-relaxed">
-                    {f.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+    <div className="mt-12 grid sm:grid-cols-2 gap-6">
+      {fleet.map((f, index) => (
+        <div
+          key={f.name}
+          className="rounded-2xl bg-white border border-[var(--color-navy)]/10 overflow-hidden"
+        >
+          <div className="relative w-full aspect-[16/10] bg-[var(--color-sand-dark)]">
+            <Image
+              src={index === 1 ? "/images/su2.jpeg" : "/images/s2.png"}
+              alt={`${f.name} placeholder \u2014 replace with your own vehicle photo`}
+              fill
+              sizes="(min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="p-6">
+            <p className="font-display text-xl font-semibold text-[var(--color-navy)]">
+              {f.name}
+            </p>
+            <p className="text-sm text-[var(--color-ink)]/65 mt-2 leading-relaxed">
+              {f.description}
+            </p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* HIRE BY THE HOUR */}
       <section className="py-20 sm:py-24">
@@ -264,12 +266,12 @@ export default function Home() {
             </Link>
           </div>
           <div className="rounded-3xl overflow-hidden bg-[var(--color-sand-dark)]">
-           <img src="/images/cus.jpeg" alt="" />
+            <DriverIllustration />
           </div>
         </div>
       </section>
 
-
+      <JourneyStats />
 
       {/* POPULAR ROUTES */}
       <section className="py-20 sm:py-24">

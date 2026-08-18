@@ -17,7 +17,7 @@ export async function generateMetadata({
   const route = routes.find((r) => r.slug === slug);
   if (!route) return {};
   return {
-    title: `${route.from} to ${route.to} Taxi | Target Transportation`,
+    title: `${route.from} to ${route.to} Taxi | Khobar and Bahrain Taxi`,
     description: route.blurb,
   };
 }

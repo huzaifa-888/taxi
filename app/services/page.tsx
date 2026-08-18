@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { services, waLink } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | Target Transportation",
+  title: "Services | Khobar and Bahrain Taxi",
   description:
     "Cross-border taxi, airport transfers, executive SUV chauffeur, and corporate travel between the Eastern Province and Bahrain.",
 };
@@ -12,19 +13,31 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-[var(--color-navy)] pt-14 pb-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber-light)] mb-4">
-            What we do
-          </p>
-          <h1 className="font-display text-4xl sm:text-5xl font-semibold text-[var(--color-sand)] max-w-2xl">
-            Private transport, built around the Khobar–Bahrain crossing
-          </h1>
-          <p className="mt-5 text-[var(--color-sand)]/70 max-w-xl leading-relaxed">
-            From the daily causeway run to executive chauffeur hire, every
-            service is priced upfront and driven by someone who knows the
-            route.
-          </p>
+      <section className="bg-[var(--color-navy)] pt-6 pb-6 h-[50vh] flex items-center overflow-hidden">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-10 items-center w-full">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber-light)] mb-4">
+              What we do
+            </p>
+            <h1 className="font-display text-4xl sm:text-5xl font-semibold text-[var(--color-sand)] max-w-2xl">
+              Private transport, built around the Khobar–Bahrain crossing
+            </h1>
+            <p className="mt-5 text-[var(--color-sand)]/70 max-w-xl leading-relaxed">
+              From the daily causeway run to executive chauffeur hire, every
+              service is priced upfront and driven by someone who knows the
+              route.
+            </p>
+          </div>
+          <div className="relative w-full aspect-[4/3] lg:aspect-[16/11]">
+            <Image
+              src="/images/sedan.png"
+              alt="Sedan used for Khobar and Bahrain Taxi's private transfers"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
       </section>
 
@@ -66,7 +79,7 @@ export default function ServicesPage() {
               Not sure which service fits your trip?
             </p>
             <p className="text-[var(--color-ink)]/65 mt-2">
-              Message us your route and dates — we'll recommend the right option.
+              Message us your route and dates — we&apos;ll recommend the right option.
             </p>
           </div>
           <a

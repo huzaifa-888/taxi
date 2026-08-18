@@ -11,14 +11,11 @@ export default function Footer() {
           <div className="flex items-center gap-2.5 mb-3">
             <Image
               src="/logo.png"
-              alt="Target Transportation \u2014 Khobar and Bahrain Taxi"
-              width={40}
-              height={40}
-              className="rounded-full bg-white"
+              alt="Khobar and Bahrain Taxi"
+              width={168}
+              height={66}
+              className="h-9 w-auto"
             />
-            <p className="font-display text-base text-[var(--color-sand)] font-semibold">
-              Target Transportation
-            </p>
           </div>
           <p className="text-sm leading-relaxed">
             Fixed-fare private taxi transfers between the Eastern Province and
@@ -78,7 +75,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-5 lg:px-8 py-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--color-sand)]/60">
-          <p>&copy; {new Date().getFullYear()} Target Transportation. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Khobar and Bahrain Taxi. All rights reserved.</p>
           <div className="flex gap-5">
             <Link href="/contact" className="hover:text-[var(--color-amber)]">Privacy Policy</Link>
             <Link href="/contact" className="hover:text-[var(--color-amber)]">Terms &amp; Conditions</Link>

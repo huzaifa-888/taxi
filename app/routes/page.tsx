@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { routes } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Routes | Target Transportation",
+  title: "Routes | Khobar and Bahrain Taxi",
   description:
     "Fixed-fare taxi routes between Al Khobar, Dammam, Jubail, Riyadh, Qatar, and Bahrain.",
 };
@@ -12,14 +13,26 @@ export const metadata: Metadata = {
 export default function RoutesPage() {
   return (
     <>
-      <section className="bg-[var(--color-navy)] pt-14 pb-20">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber-light)] mb-4">
-            All routes
-          </p>
-          <h1 className="font-display text-4xl sm:text-5xl font-semibold text-[var(--color-sand)] max-w-2xl">
-            Every route we run, one fare each way
-          </h1>
+      <section className="bg-[var(--color-navy)] pt-6 pb-6 h-[50vh] flex items-center overflow-hidden">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-10 items-center w-full">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber-light)] mb-4">
+              All routes
+            </p>
+            <h1 className="font-display text-4xl sm:text-5xl font-semibold text-[var(--color-sand)] max-w-2xl">
+              Every route we run, one fare each way
+            </h1>
+          </div>
+          <div className="relative w-full aspect-[4/3] lg:aspect-[16/11]">
+            <Image
+              src="/images/suv.png"
+              alt="SUV used for Khobar and Bahrain Taxi's route transfers"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
       </section>
 

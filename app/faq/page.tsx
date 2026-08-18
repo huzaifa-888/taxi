@@ -1,10 +1,11 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
+import Link from "next/link";
 import FAQ from "@/components/FAQ";
 import { faqs, waLink } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQs | Target Transportation",
+  title: "FAQs | Khobar and Bahrain Taxi",
   description:
     "Answers to common questions about booking a taxi between Khobar and Bahrain, pricing, documents, and vehicles.",
 };
@@ -14,6 +15,16 @@ export default function FaqPage() {
     <>
       <section className="bg-[var(--color-navy)] pt-14 pb-16 text-center">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center justify-center gap-1.5 text-xs text-[var(--color-sand)]/50 mb-6"
+          >
+            <Link href="/" className="hover:text-[var(--color-amber-light)] transition-colors">
+              Home
+            </Link>
+            <ChevronRight size={12} />
+            <span className="text-[var(--color-sand)]/80">FAQ</span>
+          </nav>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-amber-light)] mb-4">
             Support
           </p>

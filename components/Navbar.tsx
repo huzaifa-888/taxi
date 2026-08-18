@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { site } from "@/lib/data";
 
@@ -11,42 +11,26 @@ const links = [
   { href: "/services", label: "Services" },
   { href: "/routes", label: "Routes" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[var(--color-navy)] shadow-lg shadow-black/20"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="sticky top-0 z-50 bg-[var(--color-navy)] shadow-lg shadow-black/20">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="flex items-center justify-between h-18 py-3">
           <Link href="/" className="flex items-center gap-2.5 group">
             <Image
               src="/logo.png"
-              alt="Target Transportation \u2014 Khobar and Bahrain Taxi"
-              width={44}
-              height={44}
-              className="rounded-full bg-white"
+              alt="Khobar and Bahrain Taxi"
+              width={168}
+              height={66}
+              className="h-10 w-auto sm:h-11"
               priority
             />
-            <span className="font-display text-lg font-semibold text-[var(--color-sand)] hidden sm:inline">
-              Target Transportation
-            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -64,7 +48,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href={site.phoneHref}
-              className="flex items-center gap-2 text-sm text-[var(--color-sand)]/85 hover:text-[var(--color-amber)] transition-colors"
+              className="flex items-center gap-2 text-sm font-semibold text-[var(--color-amber-light)] hover:text-[var(--color-amber)] transition-colors"
             >
               <Phone size={16} />
               {site.phone}
